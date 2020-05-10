@@ -46,9 +46,6 @@ export default class TotalCountries extends React.Component {
                             <Input placeholder="Pesquise por País ou Silga" onChangeText={(e) => this.pesquisa(e)} />
                             <Icon name="ios-flag" />
                         </Item>
-                        <Button transparent>
-                            <Text>Search</Text>
-                        </Button>
                     </Header>
 
                 </View>

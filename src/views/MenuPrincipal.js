@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Image, ScrollView, TouchableOpacity, Platform } from 'react-native';
 import { Card } from 'react-native-elements';
 import { Actions } from 'react-native-router-flux'
 export default class MenuPrincipal extends Component {
@@ -18,7 +18,7 @@ export default class MenuPrincipal extends Component {
                             containerStyle={estilo.estiloCard}
                             title='Total Global'
                         >
-                            <Image source={require('../img/earth.jpg')} style={estilo.estiloImg} resizeMode='cover' />
+                            <Image source={require('../img/earth.jpg')} style={Platform.OS === 'web' ? estilo.estiloImgWeb : estilo.estiloImg} resizeMode='cover' />
                         </Card>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Actions.jump('totalCountries')}>
@@ -26,7 +26,7 @@ export default class MenuPrincipal extends Component {
                             containerStyle={estilo.estiloCard}
                             title='Total Por País'
                         >
-                            <Image source={require('../img/countries.jpg')} style={estilo.estiloImg} resizeMode='stretch' />
+                            <Image source={require('../img/countries.jpg')} style={Platform.OS === 'web' ? estilo.estiloImgWeb : estilo.estiloImg} resizeMode='stretch' />
                         </Card>
                     </TouchableOpacity>
                 </ScrollView>
@@ -42,10 +42,15 @@ const estilo = StyleSheet.create({
         borderRadius: 10,
         elevation: 5,
         borderColor: '#b2bec3',
-        borderWidth: 2
+        borderWidth: 2,
+        alignItems: 'center'
     },
     estiloImg: {
         width: "100%",
         height: "80%",
+    },
+    estiloImgWeb: {
+        width: 500,
+        height: 200,
     }
 })
