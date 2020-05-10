@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "coronavirus",
+    "name": "Corona Virus Status",
     "slug": "coronavirus",
     "platforms": [
       "ios",
@@ -9,13 +9,15 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/bacteria.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
+      "enabled": false,
+      "checkAutomatically": "ON_ERROR_RECOVERY",
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
@@ -23,6 +25,9 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "covid_marcelo.com"
     }
   }
 }
